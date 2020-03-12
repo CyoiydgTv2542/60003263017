@@ -31,7 +31,7 @@
                 </tr>
                 @endforeach
                 </table>
-                {!! $student->render() !!}
+
 
 
 
