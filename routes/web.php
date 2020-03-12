@@ -15,7 +15,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('Faculty','FacultyController@index')->name('Faculty');
 Route::get('major','MajorController@index')->name('major');
+
         Route::get('student','StudentController@index')->name('student');
         Route::get('student/destroy/{id}','StudentController@destroy');
 

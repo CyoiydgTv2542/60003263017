@@ -13,8 +13,8 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        $count =Faculty::count();  //นับจำนวนแถวทั้งหมด
-        $major=Faculty::paginate(25); // การแบ่งจำหน้าในการแสดงผล
+       $count = Faculty::count();  //นับจำนวนแถวทั้งหมด
+        $major= Faculty::paginate(10); // การแบ่งจำหน้าในการแสดงผล
         return view('Faculty.index',['Faculty'=>$major,'Faculty'=>$count]);
     }
 

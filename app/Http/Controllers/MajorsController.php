@@ -14,7 +14,7 @@ class MajorsController extends Controller
     public function index()
     {
         $count =major::count();  //นับจำนวนแถวทั้งหมด
-    $major=major::paginate(25); // การแบ่งจำหน้าในการแสดงผล
+        $major=major::paginate(10); // การแบ่งจำหน้าในการแสดงผล
 
     return view('major.index',['major'=>$major,'count'=>$count]);
     }
