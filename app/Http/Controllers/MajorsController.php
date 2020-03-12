@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\major;
 class MajorsController extends Controller
 {
     /**
@@ -13,7 +13,10 @@ class MajorsController extends Controller
      */
     public function index()
     {
-        //
+        $count =major::count();  //นับจำนวนแถวทั้งหมด
+    $major=major::paginate(25); // การแบ่งจำหน้าในการแสดงผล
+
+    return view('major.index',['major'=>$major,'count'=>$count]);
     }
 
     /**
@@ -79,6 +82,7 @@ class MajorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        major::destroy($id);
+        return back();
     }
 }

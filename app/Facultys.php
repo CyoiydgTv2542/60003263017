@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Facultys extends Model
 {
-    //
+    protected $table = 'major';
 }

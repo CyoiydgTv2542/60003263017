@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Faculty;
 class FacultyController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class FacultyController extends Controller
      */
     public function index()
     {
-        //
+        $count =Faculty::count();  //นับจำนวนแถวทั้งหมด
+        $major=Faculty::paginate(25); // การแบ่งจำหน้าในการแสดงผล
+        return view('Faculty.index',['Faculty'=>$major,'Faculty'=>$count]);
     }
 
     /**
@@ -79,6 +81,7 @@ class FacultyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        faculty::destroy($id);
+        return back();
     }
 }

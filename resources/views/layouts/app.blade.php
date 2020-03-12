@@ -41,6 +41,12 @@
                         <!-- Authentication Links -->
                         @guest
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('Faculty') }}">{{ __('Faculty') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('major') }}">{{ __('major') }}</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('student') }}">{{ __('student') }}</a>
                         </li>
 
